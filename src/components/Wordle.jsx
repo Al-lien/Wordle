@@ -11,7 +11,6 @@ export default function Wordle({ solution }) {
 
   useEffect(() => {
     window.addEventListener("keyup", handleKeyup);
-    console.log(solution);
 
     if (isCorrect) {
       setTimeout(() => {
