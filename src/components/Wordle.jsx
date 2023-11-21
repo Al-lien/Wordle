@@ -11,6 +11,7 @@ export default function Wordle({ solution }) {
 
   useEffect(() => {
     window.addEventListener("keyup", handleKeyup);
+    console.log(solution);
 
     if (isCorrect) {
       setTimeout(() => {
@@ -29,10 +30,6 @@ export default function Wordle({ solution }) {
     return () => window.removeEventListener("keyup", handleKeyup);
   }, [handleKeyup, isCorrect, turn]);
 
-  useEffect(() => {
-    console.log(guesses, turn, isCorrect);
-  }, [guesses, turn, isCorrect]);
-
   return (
     <>
       <h2>Try to guess the secret word...</h2>
@@ -40,7 +37,7 @@ export default function Wordle({ solution }) {
       <Grid currentGuess={currentGuess} guesses={guesses} turn={turn} />
       <Keypad usedKeys={usedKeys} />
       {showModal && (
-        <Modal isCorrect={isCorrect} turn={turn} solution={solution} />
+        <Modal setShowModal={setShowModal} isCorrect={isCorrect} turn={turn} solution={solution} />
       )}
     </>
   );
