@@ -1,4 +1,4 @@
-function Modal({ isCorrect, turn, solution }) {
+function Modal({ isCorrect, turn, solution, setShowModal }) {
   return (
     <div className="modal">
       {isCorrect && (
@@ -6,6 +6,12 @@ function Modal({ isCorrect, turn, solution }) {
           <h1>You win !</h1>
           <p className="solution">{solution}</p>
           <p>You found the solution in {turn} guesses 😀</p>
+          <button
+            className="button"
+            onClick={() => window.location.reload(false)}
+          >
+            Another round ?
+          </button>
         </div>
       )}
       {!isCorrect && (
@@ -13,6 +19,12 @@ function Modal({ isCorrect, turn, solution }) {
           <h1>Nevermind</h1>
           <p className="solution">{solution}</p>
           <p>Better luck next time ! 😬</p>
+          <button
+            className="button"
+            onClick={() => window.location.reload(false)}
+          >
+            Try again ?
+          </button>
         </div>
       )}
     </div>

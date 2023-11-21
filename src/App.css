@@ -144,6 +144,19 @@ p {
   letter-spacing: 1px;
 }
 
+.modal .button {
+  padding: 1em 2em;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #ff004c;
+  border-radius: 5px;
+}
+
+.modal .button:hover {
+  background-color: #ff004c;
+  color: #fff;
+}
+
 /* animations */
 
 @keyframes flip {
